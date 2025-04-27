@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
-import Navbar from './Components/Navbar';
-import Orders from './Components/Order';
-import Categories from './Components/Categories';
-import Dashboard from './Components/Dashboard';
+import React,{useState} from "react";
+import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
+import Category from "./components/Category";
+import Orders from "./components/Orders";
+import Analytics from "./components/Analytics";
+
+import Inventory from "./components/Inventory";
+import { GlobalProvider} from "./components/GlobalContext";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState("dashboard");
+  const [activePage, setActivePage] = useState("dashboard");
 
-  const renderContent = () => {
-    switch (selectedTab) {
-      case "orders":
-        return <Orders />;
-      case "categories":
-        return <Categories />;
-      case "dashboard":
-      default:
-        return <Dashboard/>;
-    }
+  const renderPage = () => {
+    if (activePage === "dashboard") return <Dashboard />;
+    if (activePage === "category") return <Category />;
+    if (activePage === "inventory") return <Inventory />;
+    if (activePage === "analytics") return <Analytics />;
+    if (activePage === "orders") return <Orders />;
+    return <h2 className="p-4">Page Not Found</h2>;
   };
 
   return (
-    <div>
-      <Navbar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-      <div style={{ padding: '20px' }}>{renderContent()}</div>
-    </div>
+    <GlobalProvider>
+      <div className="d-flex">
+        <Sidebar setActivePage={setActivePage} />
+        <div className="flex-grow-1">
+          <Navbar />
+          {renderPage()}
+        </div>
+      </div>
+    </GlobalProvider>
   );
 }
 

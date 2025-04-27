@@ -1,28 +1,34 @@
-import React from "react";
-import "./Navbar.css"; //
+import React, { useContext } from "react";
+import { GlobalContext } from "./GlobalContext";
 
-const Navbar = ({ selectedTab, setSelectedTab }) => {
+const Navbar = () => {
+  const { theme, toggleTheme } = useContext(GlobalContext);
+
+  const handleToggle = () => {
+    toggleTheme();
+    console.log(`Theme changed to: ${theme === "light" ? "dark" : "light"}`);
+    alert(`Theme changed to: ${theme === "light" ? "dark" : "light"}`);
+  };
+
   return (
-    <div className="navbar">
-      <button
-        className={`nav-btn ${selectedTab === "dashboard" ? "active" : ""}`}
-        onClick={() => setSelectedTab("dashboard")}
+    <nav className="navbar px-3 d-flex justify-content-between">
+      <button 
+        className="btn" 
+        onClick={handleToggle}
+        style={{
+          fontSize: "30px",
+          border: "none",
+          cursor: "pointer"
+        }}
       >
-        Dashboard
+        {theme === "light" ? "🌞" : "🌜"}
       </button>
-      <button
-        className={`nav-btn ${selectedTab === "orders" ? "active" : ""}`}
-        onClick={() => setSelectedTab("orders")}
-      >
-        Orders
-      </button>
-      <button
-        className={`nav-btn ${selectedTab === "categories" ? "active" : ""}`}
-        onClick={() => setSelectedTab("categories")}
-      >
-        Categories
-      </button>
-    </div>
+
+      <div
+        className="rounded-circle bg-secondary"
+        style={{ width: "40px", height: "40px" }}
+      ></div>
+    </nav>
   );
 };
 
