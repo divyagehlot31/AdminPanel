@@ -1,16 +1,23 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
+#root {
+  /* max-width: 1400px; */
+  margin: 0 20px;
+  /* padding: 2rem;
+  text-align: center; */
+} 
+
 .sidebar {
   min-height: 100vh;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    min-height: auto;
-    width: 100%;
-  }
+.nav-item{
+  font-size: 20px;
+  text-decoration: none;
 }
+
+.nav-link{
+  color: rgb(10, 9, 77) !important;
+  font-weight: 600 !important;
+
+}
+
+

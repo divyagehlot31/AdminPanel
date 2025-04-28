@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useRef} from "react";
 import { fetchOrders } from "../Services/api";
 
 const Orders = () => {
@@ -9,6 +9,8 @@ const Orders = () => {
   });
 
   const { orders, loading, searchTerm } = state;
+
+  const searchInputRef = useRef(null);
 
   useEffect(() => {
     const loadOrders = async () => {
@@ -23,7 +25,11 @@ const Orders = () => {
     };
 
     loadOrders();
+
+    searchInputRef.current?.focus();
   }, []);
+
+  
 
   //code status
   const getStatusLabel = (status) => {
@@ -115,7 +121,7 @@ const Orders = () => {
                 </span>
               </td>
               <td>{new Date(order.date).toLocaleDateString()}</td>
-              <td>${order.amount}</td>
+              <td>Rs.{order.amount}</td>
             </tr>
           ))}
         </tbody>

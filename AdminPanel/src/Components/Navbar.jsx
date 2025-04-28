@@ -2,26 +2,28 @@ import React, { useContext } from "react";
 import { GlobalContext } from "./GlobalContext";
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useContext(GlobalContext);
+  const { val, setVal } = useContext(GlobalContext);
 
-  const handleToggle = () => {
-    toggleTheme();
-    console.log(`Theme changed to: ${theme === "light" ? "dark" : "light"}`);
-    alert(`Theme changed to: ${theme === "light" ? "dark" : "light"}`);
-  };
+const handleTheme=()=>{
+  console.log("theme changed" , val ? "🌞" : "🌜"
+  )
+
+  setVal(!val)
+}
 
   return (
     <nav className="navbar px-3 d-flex justify-content-between">
       <button 
         className="btn" 
-        onClick={handleToggle}
+        onClick={handleTheme}
         style={{
           fontSize: "30px",
           border: "none",
+          marginLeft:"auto",
           cursor: "pointer"
         }}
       >
-        {theme === "light" ? "🌞" : "🌜"}
+        {val ? "🌞" : "🌜"}
       </button>
 
       <div
