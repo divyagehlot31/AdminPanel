@@ -15,6 +15,7 @@ export const fetchOrders = async () => {
     }
     return await response.json();
   };
+  
 
   // inventory
 export const fetchInventory = async () => {

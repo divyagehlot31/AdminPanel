@@ -26,8 +26,17 @@ const Inventory = () => {
 
     loadInventory();
 
-    searchInputRef.current?.focus();
+    // searchInputRef.current?.focus();
   }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      console.log(searchInputRef.current);
+      setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 1000);
+    }
+  }, [loading]);
 
   const filteredInventory = useMemo(() => {
     return inventory.filter((item) =>

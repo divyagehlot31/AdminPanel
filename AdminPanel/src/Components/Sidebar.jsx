@@ -47,17 +47,17 @@ const Sidebar = ({ setActivePage, activePage }) => {
         <div className="offcanvas-body">
           <ul className="nav flex-column">
             <li className="nav-item mb-3">
-              <button className="nav-link" onClick={() => setActivePage("dashboard")}>Dashboard</button>
+              <button className="nav-link " data-bs-dismiss="offcanvas" onClick={() => setActivePage("dashboard")}>Dashboard</button>
             </li>
            
             <li className="nav-item mb-3">
-              <button className="nav-link" onClick={() => setActivePage("inventory")}>Inventory</button>
+              <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("inventory")}>Inventory</button>
             </li>
             <li className="nav-item mb-3">
-              <button className="nav-link" onClick={() => setActivePage("orders")}>Orders</button>
+              <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("orders")}>Orders</button>
             </li>
             <li className="nav-item mb-3">
-              <button className="nav-link" onClick={() => setActivePage("analytics")}>Analytics</button>
+              <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("analytics")}>Analytics</button>
             </li>
           </ul>
         </div>
