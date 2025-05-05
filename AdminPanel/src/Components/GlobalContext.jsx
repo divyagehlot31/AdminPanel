@@ -16,7 +16,6 @@ export const GlobalContext = createContext();
 //   );
 // };
 
-
 export const ThemeProvider = ({ children }) => {
   const [val, setVal] = useState(true);
 

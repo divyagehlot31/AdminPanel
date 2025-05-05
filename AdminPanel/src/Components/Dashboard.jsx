@@ -60,7 +60,7 @@ function reducer(state, action) {
             <div className="card-body">
               <h5>Total Amount</h5>
               <p className="fs-4">
-                ₹{state.orders.reduce((sum, o) => sum + parseFloat(o.amount), 0).toFixed(2)}
+                Rs.{state.orders.reduce((sum, o) => sum + parseFloat(o.amount), 0).toFixed(2)}
               </p>
             </div>
           </div>

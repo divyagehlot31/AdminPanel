@@ -1,6 +1,8 @@
 import React, {useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { NavLink } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 const Sidebar = ({ setActivePage, activePage }) => {
   const [showSidebarButton, setShowSidebarButton] = useState(true);
@@ -37,7 +39,7 @@ const Sidebar = ({ setActivePage, activePage }) => {
       >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
-          <button
+          < button
             type="button"
             className="btn-close text-reset"
             data-bs-dismiss="offcanvas"
@@ -46,19 +48,19 @@ const Sidebar = ({ setActivePage, activePage }) => {
         </div>
         <div className="offcanvas-body">
           <ul className="nav flex-column">
-            <li className="nav-item mb-3">
+            <NavLink to="/dashboard" className="nav-item mb-3">
               <button className="nav-link " data-bs-dismiss="offcanvas" onClick={() => setActivePage("dashboard")}>Dashboard</button>
-            </li>
+            </NavLink>
            
-            <li className="nav-item mb-3">
+            <NavLink to="/inventory" className="nav-item mb-3">
               <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("inventory")}>Inventory</button>
-            </li>
-            <li className="nav-item mb-3">
+            </NavLink>
+            <NavLink to="/orders" className="nav-item mb-3">
               <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("orders")}>Orders</button>
-            </li>
-            <li className="nav-item mb-3">
+            </NavLink>
+            <NavLink to="/analytics" className="nav-item mb-3">
               <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("analytics")}>Analytics</button>
-            </li>
+            </NavLink>
           </ul>
         </div>
       </div>

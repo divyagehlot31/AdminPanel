@@ -14,7 +14,7 @@ const handleTheme=()=>{
   return (
     <nav className="navbar px-3 d-flex justify-content-between">
       <button 
-        className="btn" 
+        className="btn"
         onClick={handleTheme}
         style={{
           fontSize: "30px",
