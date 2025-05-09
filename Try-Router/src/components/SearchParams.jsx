@@ -67,7 +67,8 @@ searchParams.append("sub", "d");
       >
         Set Search Params
       </button>
-
+<br/>
+<br/>
       <button onClick={()=>{deleteParam()}}>
         Delete Id Param 
         </button>
