@@ -37,6 +37,10 @@ const Inventory = () => {
       }, 1000);
     }
   }, [loading]);
+  
+  useEffect(()=>{
+    
+  })
 
   const filteredInventory = useMemo(() => {
     return inventory.filter((item) =>

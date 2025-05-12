@@ -1,11 +1,11 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useOutletContext } from 'react-router-dom';
 
 export default function Home() {
   const navigate = useNavigate();
   const {name} = useParams()
- 
-  const id = 1;
+ const {username , key } = useOutletContext();
+   const id = 1;
 
   // list : '/admin'
   // /admin/add
@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <div>
       <h2>Home Page </h2>
+      <h2>UseOutlet context {username} : {key}</h2>
       <h2>useParams Hook</h2>
       <h3>Hii {name}</h3>
       <button onClick={() => navigate('/about' , {state: {id:id}})}>

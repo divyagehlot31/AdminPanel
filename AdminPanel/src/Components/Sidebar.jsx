@@ -49,17 +49,25 @@ const Sidebar = ({ setActivePage, activePage }) => {
         <div className="offcanvas-body">
           <ul className="nav flex-column">
             <NavLink to="/dashboard" className="nav-item mb-3">
-              <button className="nav-link " data-bs-dismiss="offcanvas" onClick={() => setActivePage("dashboard")}>Dashboard</button>
-            </NavLink>
+              {/* <button className="nav-link " data-bs-dismiss="offcanvas" onClick={() => setActivePage("dashboard")}>Dashboard</button> */}
+              <button className="nav-link " data-bs-dismiss="offcanvas" >Dashboard</button>
+
+            </NavLink> 
            
             <NavLink to="/inventory" className="nav-item mb-3">
-              <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("inventory")}>Inventory</button>
+              {/* <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("inventory")}>Inventory</button> */}
+              <button className="nav-link" data-bs-dismiss="offcanvas">Inventory</button>
+
             </NavLink>
             <NavLink to="/orders" className="nav-item mb-3">
-              <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("orders")}>Orders</button>
+              {/* <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("orders")}>Orders</button> */}
+              <button className="nav-link" data-bs-dismiss="offcanvas" >Orders</button>
+
             </NavLink>
             <NavLink to="/analytics" className="nav-item mb-3">
-              <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("analytics")}>Analytics</button>
+              {/* <button className="nav-link" data-bs-dismiss="offcanvas" onClick={() => setActivePage("analytics")}>Analytics</button> */}
+              <button className="nav-link" data-bs-dismiss="offcanvas">Analytics</button>
+
             </NavLink>
           </ul>
         </div>

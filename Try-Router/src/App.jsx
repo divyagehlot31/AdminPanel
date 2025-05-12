@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -10,12 +10,20 @@ import NavBar from "./components/NavBar";
 import ErrorPage from "./components/ErrorPage";
 // import { fetchApi } from "./Data/api";
 
-const RootLayout = () => (
-  <>
+const RootLayout = () => {
+  const data = {
+    username: "parent",
+    key:"2"
+  };
+  
+  return (
+     <>
     <NavBar />
-    <Outlet />
+    <Outlet context={data} />
   </>
-);
+  )
+ 
+};
 
 const router = createBrowserRouter([
   {
